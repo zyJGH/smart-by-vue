@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import login from '@/components/login'
-import smart from '@/components/smart'
+import login from '@/pages/login'
+import smart from '@/pages/smart'
+import first from '@/pages/first'
+import housemng from '@/pages/houseMng'
 
 Vue.use(Router)
 
@@ -15,7 +17,19 @@ export default new Router({
     {
       path: '/smart',
       name: '首页',
-      component: smart
+      component: smart,
+      children: [
+        {
+          path: 'first',
+          name: "",
+          component: first,
+        },
+        {
+          path: 'houseMng',
+          name: "房产管理",
+          component: housemng
+        }
+      ]
     }
   ]
 })
