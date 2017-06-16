@@ -37,7 +37,7 @@
                 <span class="date">2015.07.10</span>星期五
             </el-col>
             <el-col :span="6">
-                <img src="../../static/assets/2.png" alt="">您现在的位置：物业管理 > 空车位查看
+                <img src="../../static/assets/2.png" alt="">您现在的位置：{{pathName[0]}}{{pathName[1]?'>'+pathName[1]:''}}
             </el-col>
         </el-row>
     
@@ -58,11 +58,11 @@
                     <el-menu default-active="2" class="el-menu-vertical-demo">
                         <el-submenu index="1">
                             <template slot="title" class="bg49b0f1">
-                                <router-link to='/smart/first' class="colfff">
+                                <router-link to='/smart/first' class="colfff w100" >
                                     <img src="../../static/assets/wuye1.png" alt="">物业管理
                                 </router-link>
                             </template>
-                            <router-link to='/smart/houseMng'>
+                            <router-link to='/smart/houseMng' class="w100">
                                 <el-menu-item index="1-1">
                                     <i class="el-icon-message"></i>房产管理
                                 </el-menu-item>
@@ -75,22 +75,39 @@
                                     <i class="el-icon-message"></i>查看租赁合同
                                 </el-menu-item>
                             </el-submenu>
-                            <el-menu-item index="1-3">
-                                <i class="el-icon-message"></i>住房管理</el-menu-item>
+                            <!--<router-link to='/smart/chargeMng'>-->
+                                <el-menu-item index="1-3">
+                                    <i class="el-icon-message"></i>住房管理
+                                </el-menu-item>
+                            <!--</router-link>   --> 
+                                                     
                             <el-submenu index="1-4">
                                 <template slot="title">
-                                    <i class="el-icon-message"></i>收费管理</template>
-                                <el-menu-item index="1-4-1">
-                                    <i class="el-icon-message"></i>收费统计</el-menu-item>
-                                <el-menu-item index="1-4-1">
-                                    <i class="el-icon-message"></i>入费账单</el-menu-item>
+                                    <i class="el-icon-message"></i>收费管理
+                                </template>
+                                <router-link to='/smart/chargesta' class="w100">
+                                    <el-menu-item index="1-4-1">
+                                        <i class="el-icon-message"></i>收费统计
+                                    </el-menu-item>
+                                </router-link>
+                                <router-link to='/smart/chargeMng' class="w100">
+                                    <el-menu-item index="1-4-2">
+                                        <i class="el-icon-message"></i>入费账单
+                                    </el-menu-item>
+                                </router-link>
                             </el-submenu>
-                            <el-submenu index="1-5">
-                                <template slot="title">
-                                    <i class="el-icon-message"></i>车位管理</template>
-                                <el-menu-item index="1-5-1">
-                                    <i class="el-icon-message"></i>空车位查询</el-menu-item>
-                            </el-submenu>
+                            <router-link to='/smart/carMng' class="w100">
+                                <el-submenu index="1-5">                                
+                                    <template slot="title">
+                                        <i class="el-icon-message"></i>车位管理
+                                    </template>
+                                    <router-link to='/smart/emptyCar'>                         
+                                        <el-menu-item index="1-5-1">
+                                            <i class="el-icon-message"></i>空车位查询
+                                        </el-menu-item>
+                                    </router-link>
+                                </el-submenu>
+                            </router-link>
                         </el-submenu>
     
                         <el-submenu index="2">
@@ -157,133 +174,41 @@
     </div>
 </template>
 <script>
-import first from './first.vue';
+import first from './first.vue'
+import chargeMng from './chargeMng.vue'
+import chargesta from './chargestatistics.vue'
+import carMng from './carMng.vue'
+import emptyCar from './emptyCar';
 export default {
     data() {
         return {
-
+            pathName:[]
+        }
+    },
+    methods:{
+        aa(){
+            this.pathName=[this.$route.matched[0].name,this.$route.matched[1].name]
         }
     },
     components: {
-        first
+        first,
+        chargeMng,
+        chargesta,
+        carMng,
+        emptyCar
+    },
+    watch:{
+        '$route': 'aa'
     }
 }
 </script>
 
 <style lang="scss" >
-a {text-decoration: none;display: inline-block;}
-.tx-r {
-    text-align: right;
-}
-
-.tx-l {
-    text-align: left;
-}
-
-.tx-c {
-    text-align: center;
-}
-
-.clear {
-    clear: both;
-}
-
-img {
-    vertical-align: middle;
-    margin-top: -3px;
-}
-
-.bgf39500 {
-    background: #f39500;
-}
-
-.bg49b0f1 {
-    background: #49b0f1;
-}
-
-.propertyList>.el-menu:first-child>.el-submenu:first-child>.el-submenu__title,
-.propertyList>.el-menu>.el-submenu:nth-child(2)>.el-submenu__title,
-.propertyList>.el-menu>.el-submenu:nth-child(3)>.el-submenu__title,
-.propertyList>.el-menu>.el-submenu:nth-child(4)>.el-submenu__title,
-.propertyList>.el-menu>.el-submenu:nth-child(5)>.el-submenu__title {
-    background: #49b0f1;
-    border-radius: 5px;
-    margin-top: 2px;
-    color: #fff;
-    height: 35px;
-    line-height: 35px;
-}
-
 .el-submenu .el-menu-item,
 .el-menu-item,
 .el-submenu__title {
     height: 26px;
     line-height: 26px;
-}
-
-.el-menu {
-    background: transparent;
-}
-
-.floatL {
-    float: left;
-}
-
-.floatR {
-    float: right;
-}
-
-.font12 {
-    font-size: 12px;
-}
-
-.font14 {
-    font-size: 14px;
-}
-
-.font18 {
-    font-size: 18px;
-}
-
-.fs50 {
-    font-size: 50px;
-}
-
-.colfff {
-    color: #fff;
-}
-
-.colf39500 {
-    color: #f39500;
-}
-
-.col0681c1 {
-    color: #0681c1;
-}
-
-.cola7a7a7 {
-    color: #a7a7a7;
-}
-
-.curs {
-    cursor: pointer;
-}
-
-.w48 {
-    width: 48px !important;
-}
-
-.margL20 {
-    margin-left: 20px;
-}
-.margB20 {
-    margin-bottom: 20px;
-}
-.padL20 {
-    padding-left: 20px;
-}
-.btnw {
-    width: 120px;
 }
 .header {
     padding: 24px 66px 12px 36px;
@@ -326,7 +251,7 @@ img {
 }
 
 .wrap {
-    padding: 30px 42px 52px 40px;    
+    padding: 30px 42px 32px 40px;    
     .wrapL {
         .welcome {
             width: 100%;
@@ -353,18 +278,19 @@ img {
             }
         }
     }
-    .wrapRbar {
-    width: 100%;
-    height: 40px;
-    background: url(../../static/assets/bar.png) no-repeat;
-    margin-bottom: 40px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
+    
 .wrapR {
     background: #fff;
     border-radius: 5px;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
+    .wrapRbar {
+        width: 100%;
+        height: 40px;
+        background: url(../../static/assets/bar.png) no-repeat;
+        margin-bottom: 20px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
     .zhNum {
         padding: 20px 0;
         border-radius: 5px;

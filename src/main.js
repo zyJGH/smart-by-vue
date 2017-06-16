@@ -16,3 +16,6 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
+
+// 全局echarts
+// Vue.prototype.$echarts = echarts;

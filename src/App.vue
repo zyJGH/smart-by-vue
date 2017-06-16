@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import '../static/css/style.css'
 export default {
   name: 'app'
 }
@@ -13,15 +14,14 @@ export default {
 <style lang="scss">
 * {
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
 body {
   background: #007ec0;
-  // background: rgba( 237, 234 ,234, .7);
 }
 
-// #app {
-//   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-// }
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+}
 </style>

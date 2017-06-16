@@ -1,6 +1,6 @@
 <template>
     <el-col>      
-        <el-col>
+        <el-col class="margB20 margT20">
             <el-col :span="6" :offset="2" class="tx-c colfff zhNum bg49b0f1">
                 <div class="fs50">
                     <img src="../../static/assets/11.png" alt="">
@@ -23,7 +23,7 @@
                 <span>总住户数</span>
             </el-col>
         </el-col>
-        <el-col style="margin: 50px 0;">
+        <el-col>
             <el-col :span="6" :offset="2" class="zhNum floatL curs">
                 <el-col :span="7">
                     <img src="../../static/assets/fcgl2.png" class="margL20 w48" alt="">

@@ -4,22 +4,56 @@
       <el-row class="tx-c">
         <img src="../../static/assets/register-title.png">
       </el-row>
-      <el-form class="from1">
-        <el-form-item class="posi-rel">
-          <el-input placeholder="用户名"></el-input>
+      <el-form class="from1" :model="ruleForm" :rules="rules" ref="ruleForm">
+        <el-form-item class="posi-rel" prop="name">
+          <el-input placeholder="用户名" v-model="ruleForm.name"></el-input>
           <img src="../../static/assets/user.png">
         </el-form-item>
-        <el-form-item class="posi-rel">
-          <el-input placeholder="密 码"></el-input>
+        <el-form-item class="posi-rel" prop="pswd">
+          <el-input placeholder="密 码" v-model="ruleForm.pswd"></el-input>
           <img src="../../static/assets/pswd.png">
         </el-form-item>
-        <router-link to="/smart">
-          <el-button class="el-input__inner tx-c" type="warning">立即登录</el-button>
-        </router-link>        
+        <el-button class="el-input__inner tx-c" @click='login("ruleForm")' type="warning">立即登录</el-button>
       </el-form>
     </div>
   </div>
-</template> 
+</template>
+<script>
+export default {
+  data() {
+    return {
+      ruleForm: {
+          name: '',
+          pswd: ''
+      },
+      rules: {
+        'name': [
+          {required: true, message: '请输入用户名', trigger: 'blur'},
+          { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+        ],
+        'pswd': [
+          {required: true, message: '请输入密码', trigger: 'blur'}
+        ]
+      }
+    }
+  },
+  methods:{
+    login(user){
+      this.$refs[user].validate((valid) => {
+        if (valid) {
+          console.log(this.$route)
+          console.log(this.$router)
+          this.$router.push('/smart/first');
+        } else {
+          console.log(valid);
+          return false;
+        }
+      })
+    }
+  }
+}
+</script>
+
 
 <style lang="scss">
 .wh {
@@ -58,7 +92,7 @@ input[type="text"] {
       img {
         width: 20px;
         position: absolute;
-        top: 7px;
+        top: 12px;
         left: 8px;
       }
     }
