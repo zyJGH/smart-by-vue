@@ -1,10 +1,10 @@
 <template>
   <el-col>
-    <el-col :span="22" :offset="1" class="tx-r margB20">
+    <el-col class="tx-r margB20">
         <el-pagination :page-sizes="[100, 200, 300, 400]" :page-size="100" layout="total, sizes, prev, pager, next, jumper" :total="400"></el-pagination> 
     </el-col>
 
-    <el-col :span="22" :offset="1" class="margB20">
+    <el-col class="margB20">
         <el-table :data="tableData" border class="tx-c">
             <el-table-column prop="houseNum" label="门牌号码"></el-table-column>
             <el-table-column prop="type" label="类型"></el-table-column>

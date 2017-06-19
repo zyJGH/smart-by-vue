@@ -1,6 +1,6 @@
 <template>
     <el-row>
-        <el-col :span="22" :offset="1" class="margB20">
+        <el-col class="margB20">
             <el-col class="margB20">
                 <router-link to="/smart/chargesta">
                     <el-button type="warning" class="btnw">收费统计</el-button>
@@ -13,7 +13,7 @@
                 <select1/>
             </el-col>
         </el-col>
-        <el-col :span="22" :offset="1">
+        <el-col>
             <el-button class="btnw" type="info">搜&nbsp;&nbsp;索</el-button>
             <el-button class="btnw" type="success">增加缴费记录</el-button>
         </el-col>

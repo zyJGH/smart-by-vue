@@ -1,6 +1,6 @@
 <template>
   <el-col>
-    <el-col :span="22" :offset="1" class="margB20">
+    <el-col class="margB20">
         <el-col class="margB20">
             <router-link to="/smart/carMng">
                 <el-button type="warning" class="btnw">车位管理</el-button>
@@ -8,7 +8,6 @@
             <el-button class="btnw floatR" disabled="disabled">空车位管理</el-button>
             <el-col class="clear"></el-col>
         </el-col>
-
         <el-col>
             <el-col v-for="item in 2" key='item' :span="6">
                 <select1/>            
@@ -21,23 +20,25 @@
             </el-col>
         </el-col>
     </el-col>
-    <el-col :span="22" :offset="1">
+    <el-col>
         <el-button class="btnw" type="info">搜&nbsp;&nbsp;索</el-button>
         <el-button class="btnw" type="success">增加车位</el-button>
     </el-col>
         
-    <el-col :span="22" :offset="1" class="tx-r margB20">
+    <el-col class="tx-r margB20">
         <el-pagination :page-sizes="[100, 200, 300, 400]" :page-size="100" layout="total, sizes, prev, pager, next, jumper" :total="400"></el-pagination> 
     </el-col>
-
+    <car></car>
   </el-col>
 </template>
 <script>
 import select1 from '../components/select';
+import car from '../components/car';
 
 export default {
   components: {
-    select1
+    select1,
+    car
   }
 }
 </script>

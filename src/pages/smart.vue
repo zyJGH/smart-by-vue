@@ -67,19 +67,23 @@
                                     <i class="el-icon-message"></i>房产管理
                                 </el-menu-item>
                             </router-link>
-                            <el-submenu index='1-2'>
-                                <template slot="title">
-                                    <i class="el-icon-message"></i>租赁管理
-                                </template>
-                                <el-menu-item index="1-2-1">
-                                    <i class="el-icon-message"></i>查看租赁合同
-                                </el-menu-item>
-                            </el-submenu>
-                            <!--<router-link to='/smart/chargeMng'>-->
+                            <router-link to="/smart/leaseMng" class="w100">
+                                <el-submenu index='1-2'>
+                                    <template slot="title">
+                                        <i class="el-icon-message"></i>租赁管理 
+                                    </template>
+                                    <router-link to="/smart/leaseMng/leaseContract" class="w100">
+                                        <el-menu-item index="1-2-1">
+                                            <i class="el-icon-message"></i>查看租赁合同
+                                        </el-menu-item>
+                                    </router-link>                                   
+                                </el-submenu>
+                            </router-link>
+                            <router-link to='/smart/householdMng' class="w100">
                                 <el-menu-item index="1-3">
-                                    <i class="el-icon-message"></i>住房管理
+                                    <i class="el-icon-message"></i>住户管理
                                 </el-menu-item>
-                            <!--</router-link>   --> 
+                            </router-link>    
                                                      
                             <el-submenu index="1-4">
                                 <template slot="title">
@@ -101,7 +105,7 @@
                                     <template slot="title">
                                         <i class="el-icon-message"></i>车位管理
                                     </template>
-                                    <router-link to='/smart/emptyCar'>                         
+                                    <router-link to='/smart/emptyCar' class="w100">      
                                         <el-menu-item index="1-5-1">
                                             <i class="el-icon-message"></i>空车位查询
                                         </el-menu-item>
@@ -111,10 +115,12 @@
                         </el-submenu>
     
                         <el-submenu index="2">
-                            <template slot="title">
-                                <!--<router-link to='/smart/' class="colfff">-->
-                                    <img src="../../static/assets/weixiu1.png" alt="">维修管理</template>
-                                <!--</router-link>-->
+                            <template slot="title">   
+                                <router-link to='/smart/serviceMng' class="colfff">
+                                    <img src="../../static/assets/weixiu1.png" alt="">维修管理
+                                </router-link>
+                            </template>
+                            
                             <el-menu-item index="2-1">
                                 <i class="el-icon-message"></i>马桶维修</el-menu-item>
                             <el-menu-item index="2-2">
@@ -129,7 +135,10 @@
     
                         <el-submenu index="3">
                             <template slot="title">
-                                <img src="../../static/assets/anfang1.png" alt="">安防管理</template>
+                                <router-link to="/smart/security" class="colfff w100">
+                                    <img src="../../static/assets/anfang1.png" alt="">安防管理
+                                </router-link>
+                            </template>   
                             <el-menu-item index="3-1">
                                 <i class="el-icon-message"></i>进出门禁</el-menu-item>
                             <el-menu-item index="3-2">
@@ -166,7 +175,10 @@
             <el-col :span="20" class="padL20">
                 <el-col class="wrapR">
                     <el-col class="wrapRbar"></el-col>
-                    <router-view></router-view>
+                    <el-col :span="22" :offset="1">
+                        <router-view class="h470"></router-view>
+                    </el-col>
+                    
                 </el-col>
             </el-col>
         </el-row>
@@ -178,7 +190,13 @@ import first from './first.vue'
 import chargeMng from './chargeMng.vue'
 import chargesta from './chargestatistics.vue'
 import carMng from './carMng.vue'
-import emptyCar from './emptyCar';
+import emptyCar from './emptyCar'
+import leaseMng from './leaseMng'
+import leaseContract from './leaseContract';
+import householdMng from './householdMng';
+import serviceMng from './serviceMng';
+import security from './security';
+
 export default {
     data() {
         return {
@@ -195,7 +213,12 @@ export default {
         chargeMng,
         chargesta,
         carMng,
-        emptyCar
+        emptyCar,
+        leaseMng,
+        leaseContract,
+        householdMng,
+        serviceMng,
+        security
     },
     watch:{
         '$route': 'aa'
@@ -292,7 +315,7 @@ export default {
         border-top-right-radius: 5px;
     }
     .zhNum {
-        padding: 20px 0;
+        padding: 15px 0;
         border-radius: 5px;
         .count1 {
             padding-top: 2px;
@@ -304,6 +327,9 @@ export default {
         .font18 {
             padding-top: 2px;
         }
+    }
+    .h470 {
+        height: 470px;
     }
 }
 }

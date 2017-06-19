@@ -1,7 +1,6 @@
 <template>
-<el-row>
-
-    <el-col :span="22" :offset="1" class="margB20">
+<el-col>
+    <el-col class="margB20">
         <el-button class="btnw" disabled="disabled">收费统计</el-button>
         <router-link to="/smart/chargeMng" class="floatR">
             <el-button type="warning" class="btnw">入费账单</el-button>           
@@ -10,15 +9,14 @@
         <el-col class="clear"></el-col>
     </el-col>
 
-    <el-col :span="22" :offset="1">
+    <el-col>
         <el-col :span="11" class="border totalCharge"></el-col>
         <el-col :span="12" :offset="1" class="border receCharge"></el-col>
     </el-col>    
-</el-row>  
+</el-col>  
 </template>
 
 <script>
-// import chargeMng from 'chargeMng';
 export default {
   data() {
       return {
@@ -27,8 +25,8 @@ export default {
   },
   mounted() {
       var echarts = require('echarts');
-      let totalCharge =echarts.init(document.querySelector('.totalCharge'));
-      let receCharge =echarts.init(document.querySelector('.receCharge'));
+      let totalCharge = echarts.init(document.querySelector('.totalCharge'));
+      let receCharge = echarts.init(document.querySelector('.receCharge'));
       let totalOption = {
         title: {
             text: '本小区各类收费统计表',
