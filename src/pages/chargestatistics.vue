@@ -2,11 +2,9 @@
 <el-col>
     <el-col class="margB20">
         <el-button class="btnw" disabled="disabled">收费统计</el-button>
-        <router-link to="/smart/chargeMng" class="floatR">
+        <router-link to="/smart/first/chargeMng/charge" class="floatR">
             <el-button type="warning" class="btnw">入费账单</el-button>           
         </router-link>
-         <el-col class="clear"></el-col>
-        <el-col class="clear"></el-col>
     </el-col>
 
     <el-col>

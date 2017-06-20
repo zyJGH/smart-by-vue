@@ -62,24 +62,27 @@
                                     <img src="../../static/assets/wuye1.png" alt="">物业管理
                                 </router-link>
                             </template>
-                            <router-link to='/smart/houseMng' class="w100">
+                            <router-link to='/smart/first/houseMng' class="w100">
                                 <el-menu-item index="1-1">
                                     <i class="el-icon-message"></i>房产管理
                                 </el-menu-item>
                             </router-link>
-                            <router-link to="/smart/leaseMng" class="w100">
-                                <el-submenu index='1-2'>
-                                    <template slot="title">
-                                        <i class="el-icon-message"></i>租赁管理 
-                                    </template>
-                                    <router-link to="/smart/leaseMng/leaseContract" class="w100">
-                                        <el-menu-item index="1-2-1">
-                                            <i class="el-icon-message"></i>查看租赁合同
-                                        </el-menu-item>
-                                    </router-link>                                   
-                                </el-submenu>
-                            </router-link>
-                            <router-link to='/smart/householdMng' class="w100">
+                            <el-submenu index='1-2'>
+                                <template slot="title">
+                                    <i class="el-icon-message"></i>租赁管理 
+                                </template>
+                                <router-link to="/smart/first/leaseMng/lease" class="w100">
+                                    <el-menu-item index="1-2-1">
+                                        <i class="el-icon-message"></i>租赁信息
+                                    </el-menu-item>
+                                </router-link>  
+                                <router-link to="/smart/first/leaseMng/leaseContract" class="w100">
+                                    <el-menu-item index="1-2-2">
+                                        <i class="el-icon-message"></i>查看租赁合同
+                                    </el-menu-item>
+                                </router-link>                                   
+                            </el-submenu>
+                            <router-link to='/smart/first/householdMng' class="w100">
                                 <el-menu-item index="1-3">
                                     <i class="el-icon-message"></i>住户管理
                                 </el-menu-item>
@@ -89,60 +92,89 @@
                                 <template slot="title">
                                     <i class="el-icon-message"></i>收费管理
                                 </template>
-                                <router-link to='/smart/chargesta' class="w100">
-                                    <el-menu-item index="1-4-1">
-                                        <i class="el-icon-message"></i>收费统计
-                                    </el-menu-item>
-                                </router-link>
-                                <router-link to='/smart/chargeMng' class="w100">
+                                <router-link to='/smart/first/chargeMng/charge' class="w100">
                                     <el-menu-item index="1-4-2">
                                         <i class="el-icon-message"></i>入费账单
                                     </el-menu-item>
                                 </router-link>
+                                <router-link to='/smart/first/chargeMng/chargesta' class="w100">
+                                    <el-menu-item index="1-4-1">
+                                        <i class="el-icon-message"></i>收费统计
+                                    </el-menu-item>
+                                </router-link>                                
                             </el-submenu>
-                            <router-link to='/smart/carMng' class="w100">
-                                <el-submenu index="1-5">                                
-                                    <template slot="title">
-                                        <i class="el-icon-message"></i>车位管理
-                                    </template>
-                                    <router-link to='/smart/emptyCar' class="w100">      
-                                        <el-menu-item index="1-5-1">
-                                            <i class="el-icon-message"></i>空车位查询
-                                        </el-menu-item>
-                                    </router-link>
-                                </el-submenu>
-                            </router-link>
+
+                            <el-submenu index="1-5">                                
+                                <template slot="title">
+                                    <i class="el-icon-message"></i>车位管理
+                                </template>
+                                <router-link to='/smart/first/carMng/cars' class="w100"> 
+                                    <el-menu-item index="1-5-1">
+                                        <i class="el-icon-message"></i>车位信息
+                                    </el-menu-item>
+                                </router-link>
+                                <router-link to='/smart/first/carMng/emptyCar' class="w100">      
+                                    <el-menu-item index="1-5-2">
+                                        <i class="el-icon-message"></i>空车位查询
+                                    </el-menu-item>
+                                </router-link>
+                            </el-submenu>
+                            
                         </el-submenu>
     
                         <el-submenu index="2">
                             <template slot="title">   
-                                <router-link to='/smart/serviceMng' class="colfff">
+                                <router-link to='/smart/serviceMng' class="colfff w100">
                                     <img src="../../static/assets/weixiu1.png" alt="">维修管理
                                 </router-link>
                             </template>
-                            
-                            <el-menu-item index="2-1">
-                                <i class="el-icon-message"></i>马桶维修</el-menu-item>
-                            <el-menu-item index="2-2">
-                                <i class="el-icon-message"></i>灯管报修</el-menu-item>
-                            <el-menu-item index="2-3">
-                                <i class="el-icon-message"></i>水道报修</el-menu-item>
-                            <el-menu-item index="2-4">
-                                <i class="el-icon-message"></i>绿化报修</el-menu-item>
-                            <el-menu-item index="2-5">
-                                <i class="el-icon-message"></i>马路地面报修</el-menu-item>
+                            <router-link to="/smart/serviceMng/closestool" class="w100">
+                                <el-menu-item index="2-1">
+                                    <i class="el-icon-message"></i>马桶维修
+                                </el-menu-item>
+                            </router-link>
+                            <router-link to="/smart/serviceMng/lamp" class="w100">
+                                <el-menu-item index="2-2">
+                                    <i class="el-icon-message"></i>灯管报修
+                                </el-menu-item>
+                            </router-link>
+                            <router-link to="/smart/serviceMng/waterway" class="w100">
+                                <el-menu-item index="2-3">
+                                    <i class="el-icon-message"></i>水道报修
+                                </el-menu-item>
+                            </router-link>
+                            <router-link to="/smart/serviceMng/green" class="w100">
+                                <el-menu-item index="2-4">
+                                    <i class="el-icon-message"></i>绿化报修
+                                </el-menu-item>
+                            </router-link>
+                            <router-link to="/smart/serviceMng/road" class="w100">
+                                <el-menu-item index="2-5">
+                                    <i class="el-icon-message"></i>马路地面报修
+                                </el-menu-item>
+                            </router-link>
                         </el-submenu>
     
                         <el-submenu index="3">
                             <template slot="title">
-                                <router-link to="/smart/security" class="colfff w100">
+                                <router-link to="/smart/securityMng/security" class="colfff w100">
                                     <img src="../../static/assets/anfang1.png" alt="">安防管理
                                 </router-link>
-                            </template>   
-                            <el-menu-item index="3-1">
-                                <i class="el-icon-message"></i>进出门禁</el-menu-item>
-                            <el-menu-item index="3-2">
-                                <i class="el-icon-message"></i>电梯管理</el-menu-item>
+                            </template>
+                            
+                            <router-link to="/smart/securityMng/entranceGuard" class="colfff w100">
+                                <el-menu-item index="3-1">
+                                    <i class="el-icon-message"></i>进出门禁
+                                </el-menu-item>
+                            </router-link>
+
+                            <router-link to="/smart/securityMng/lift" class="colfff w100">
+                                <el-menu-item index="3-2">
+                                    <i class="el-icon-message"></i>电梯管理
+                                </el-menu-item>
+                            </router-link>
+
+
                             <el-submenu index='3-3'>
                                 <template slot="title">
                                     <i class="el-icon-message"></i>灭火装置管理</template>
@@ -186,17 +218,6 @@
     </div>
 </template>
 <script>
-import first from './first.vue'
-import chargeMng from './chargeMng.vue'
-import chargesta from './chargestatistics.vue'
-import carMng from './carMng.vue'
-import emptyCar from './emptyCar'
-import leaseMng from './leaseMng'
-import leaseContract from './leaseContract';
-import householdMng from './householdMng';
-import serviceMng from './serviceMng';
-import security from './security';
-
 export default {
     data() {
         return {
@@ -205,21 +226,17 @@ export default {
     },
     methods:{
         aa(){
-            this.pathName=[this.$route.matched[0].name,this.$route.matched[1].name]
+            this.pathName=[
+                this.$route.matched[0].name,
+                this.$route.matched[1].name,
+                // this.$route.matched[2].name
+            ]
+            // this.pathName =this.$route.matched;
+
+            // console.log(this.pathName);
+            console.log(this.$route.matched);
         }
-    },
-    components: {
-        first,
-        chargeMng,
-        chargesta,
-        carMng,
-        emptyCar,
-        leaseMng,
-        leaseContract,
-        householdMng,
-        serviceMng,
-        security
-    },
+    },    
     watch:{
         '$route': 'aa'
     }

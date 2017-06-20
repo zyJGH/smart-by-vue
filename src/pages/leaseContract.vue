@@ -1,5 +1,6 @@
 <template>
     <el-col>
+        <leaseMng></leaseMng>
         <el-dialog class="lih26" title="查看租赁合同" :visible.sync="dialogVisible" size="tiny" :before-close="handleClose">
             <p>
                 用人单位(甲方)：法定代表人：<br>

@@ -1,6 +1,6 @@
 <template>
 <el-row>
-    <el-col class="margB20">            
+    <el-col class="margB20 margT20">            
         <el-col v-for="item in 3" key='item' :span="5">
             <select1/>
         </el-col>

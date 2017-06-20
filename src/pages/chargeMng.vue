@@ -2,7 +2,7 @@
     <el-row>
         <el-col class="margB20">
             <el-col class="margB20">
-                <router-link to="/smart/chargesta">
+                <router-link to="/smart/first/chargeMng/chargesta">
                     <el-button type="warning" class="btnw">收费统计</el-button>
                 </router-link>
                 <el-button class="btnw floatR" disabled="disabled">入费账单</el-button>

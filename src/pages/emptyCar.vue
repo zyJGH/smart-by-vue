@@ -2,7 +2,7 @@
   <el-col>
     <el-col class="margB20">
         <el-col class="margB20">
-            <router-link to="/smart/carMng">
+            <router-link to="/smart/first/carMng/cars">
                 <el-button type="warning" class="btnw">车位管理</el-button>
             </router-link>
             <el-button class="btnw floatR" disabled="disabled">空车位管理</el-button>

@@ -2,19 +2,19 @@
     <el-col>
         <el-col>
             <el-col :span="7" :offset="2" class="zhNum">
-                <router-link to="/smart/housemng" class="colf39500 w100">
-                <el-col :span="7">
-                    <img src="../../static/assets/matong.png" class="w48 margL20">
-                </el-col>
-                <el-col :span="16">
-                    <el-col class="col333 font18">马桶维修</el-col>
-                    <el-col class="font12 cola7a7a7">所有的马桶报修</el-col>
-                </el-col>
+                <router-link to="/smart/serviceMng/closestool" class="w100">
+                    <el-col :span="7">
+                        <img src="../../static/assets/matong.png" class="w48 margL20">
+                    </el-col>
+                    <el-col :span="16">
+                        <el-col class="col333 font18">马桶维修</el-col>
+                        <el-col class="font12 cola7a7a7">所有的马桶报修</el-col>
+                    </el-col>
                 </router-link>
             </el-col>
 
             <el-col :span="7" class="zhNum">
-                <router-link to="/smart/leaseMng" class="colf39500 w100">
+                <router-link to="/smart/serviceMng/lamp" class="w100">
                 <el-col :span="7">
                     <img src="../../static/assets/deng.png" class="w48 margL20">
                 </el-col>
@@ -26,7 +26,7 @@
             </el-col>
 
             <el-col :span="7" class="zhNum">
-                <router-link to="/smart/householdMng" class="colf39500 w100">
+                <router-link to="/smart/serviceMng/waterway" class="w100">
                 <el-col :span="7">
                     <img src="../../static/assets/baoxiu.png" class="margL20">
                 </el-col>
@@ -38,7 +38,7 @@
             </el-col>
 
             <el-col :span="7" :offset="2" class="zhNum">
-                <router-link to="/smart/chargemng" class="colf39500 w100">
+                <router-link to="/smart/serviceMng/green" class="w100">
                 <el-col :span="7">
                     <img src="../../static/assets/lvhua.png" class="margL20 w48">
                 </el-col>
@@ -50,7 +50,7 @@
             </el-col>
             
             <el-col :span="7" class="zhNum">
-                <router-link to="/smart/carMng" class="colf39500 w100">
+                <router-link to="/smart/serviceMng/road" class="w100">
                 <el-col :span="7">
                     <img src="../../static/assets/malu.png" class="margL20 w48">
                 </el-col>
@@ -63,9 +63,7 @@
            
         </el-col>
 
-       <el-col :offset="2" class="statistics">
-
-       </el-col>
+       <el-col :offset="1" class="statistics"></el-col>
     </el-col>
 </template>
 <script>
@@ -120,8 +118,9 @@ export default {
 </script>
 <style lang="scss">
 .statistics {
-    width: 60%;
+    width: 40%;
     height: 340px;
+    margin-top: 15px;
 }
 </style>
 
