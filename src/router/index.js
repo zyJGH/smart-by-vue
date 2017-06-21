@@ -21,6 +21,14 @@ import green from '@/pages/green';
 import road from '@/pages/road';
 import entranceGuard from '@/pages/entranceGuard';
 import lift from '@/pages/lift';
+import fire from '@/pages/fire';
+import fireState from '@/pages/fireState';
+import healthMng from '@/pages/healthMng';
+import corridor from '@/pages/corridor';
+import park from '@/pages/park';
+import settings from '@/pages/settings';
+import householdStatistics from '@/pages/householdStatistics';
+import advert from '@/pages/advert';
 
 Vue.use(Router)
 
@@ -100,20 +108,40 @@ export default new Router({
             {path: 'entranceGuard', name: "进出门禁", component: entranceGuard},
             {path: 'lift', name: "电梯管理", component: lift},
             {
-              path: 'entranceGuard', 
+              path: 'fire', 
               name: "灭火装置", 
-              component: entranceGuard,
+              component: layout,
+              redirect: '/smart/securityMng/security/huo/fire',
               children: [
-                {
-                  path: 'mie',
-                  name: '',
-                }
-                
+                { path: 'huo', name: '灭火装置', component: fire },
+                { path: 'fireState', name: '灭火装置状态', component: fireState }                
               ]
             }
           ],
           
         },
+        {
+          path: 'healthMng',
+          name: '卫生管理',
+          component: layout,
+          redirect: '/smart/healthMng/health',
+          children: [
+            { path: 'health', name:'卫生管理', component: healthMng },
+            { path: 'corridor', name:'卫生管理', component: corridor },
+            { path: 'park', name:'卫生管理', component: park },
+          ]
+        },
+        {
+          path: 'settings',
+          name: '系统设置',
+          component: layout,
+          redirect: '/smart/settings/setting',
+          children: [
+            { path: 'setting', name: '系统设置', component: settings },
+            { path: 'householdStatistics', name: '住户统计', component: householdStatistics },
+            { path: 'advert', name: '广告管理', component: advert }
+          ]
+        }
 
       ]
     }

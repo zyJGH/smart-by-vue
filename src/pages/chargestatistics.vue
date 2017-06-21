@@ -32,12 +32,6 @@ export default {
             left: 'center'
         },
         color: ['#4f81bd'],
-        tooltip : {
-            trigger: 'axis',
-            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-            }
-        },
         xAxis : [
             {
                 type : 'category',
@@ -49,7 +43,18 @@ export default {
         ],
         yAxis : [
             {
-                type : 'value'
+                axisLabel: {
+                    show: false,
+                },
+                axisLine: {
+                    show: false,
+                },
+                splitLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                }
             }
         ],
         series : [
@@ -57,6 +62,13 @@ export default {
                 name:'收费',
                 type:'bar',
                 barWidth: '50%',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'outside',
+                        formatter: "{c}"
+                    }
+                },
                 data:[10, 52, 200, 334, 220]
             }
         ]
@@ -65,14 +77,7 @@ export default {
             color: ['#4f81bd', '#d14a61'],
             title: {
                 text: '本小区各类费用已收与待收对比统计图',
-                // left: 'center',
                 subtext: '单位: 万'
-            },
-            tooltip: {
-                trigger: 'axis',
-                axisPointer: {
-                    type: 'shadow'
-                }
             },
             legend: {
                 data: ['2016年', '2017年'],
@@ -84,10 +89,23 @@ export default {
                 bottom: '3%',
                 containLabel: true
             },
-            yAxis: {
+            yAxis: [{
                 type: 'value',
-                boundaryGap: [0, 0.01]
-            },
+                boundaryGap: [0, 0.01],
+                
+                axisLabel: {
+                    show: false,
+                },
+                axisLine: {
+                    show: false,
+                },
+                splitLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                }
+            }],
             xAxis: {
                 type: 'category',
                 data: ["物业费","停车费","水费","电费","煤气费"]
@@ -96,11 +114,25 @@ export default {
                 {
                     name: '2016年',
                     type: 'bar',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'outside',
+                            formatter: "{c}"
+                        }
+                    },
                     data: [18203, 23489, 29034, 14970, 31744]
                 },
                 {
                     name: '2017年',
                     type: 'bar',
+                    label: {
+                    normal: {
+                        show: true,
+                        position: 'outside',
+                        formatter: "{c}"
+                    }
+                },
                     data: [29325, 23438, 31000, 34141, 21807]
                 }
             ]

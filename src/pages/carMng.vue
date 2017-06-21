@@ -9,7 +9,7 @@
         </el-col>
         <el-col>
             <el-col v-for="item in 2" key='item' :span="6">
-                <select1/>            
+                <select1 :select='select' />            
             </el-col>
             <el-col :span="12">
                 <el-col :span="4" class="lih34">车位编号: </el-col>
@@ -31,6 +31,16 @@
 import select1 from '../components/select';
 import table1 from '../components/table';
 export default {
+    data(){
+        return {
+            // type: '类型',
+            select:[{
+                label:'1'
+            },{
+                label:'2'
+            }]
+        }
+    },
   components: {
     select1,
     table1

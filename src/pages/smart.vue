@@ -174,31 +174,58 @@
                                 </el-menu-item>
                             </router-link>
 
-
                             <el-submenu index='3-3'>
                                 <template slot="title">
-                                    <i class="el-icon-message"></i>灭火装置管理</template>
-                                <el-menu-item index="3-3-1">
-                                    <i class="el-icon-message"></i>灭火装置状态</el-menu-item>
+                                    <i class="el-icon-message"></i>灭火装置管理
+                                </template>
+                                <router-link to="/smart/securityMng/fire/huo" class="colfff w100">
+                                    <el-menu-item index="3-3-1">
+                                        <i class="el-icon-message"></i>灭火装置
+                                    </el-menu-item>
+                                </router-link>
+                                <router-link to="/smart/securityMng/fire/fireState" class="colfff w100">
+                                    <el-menu-item index="3-3-2">
+                                        <i class="el-icon-message"></i>灭火装置状态
+                                    </el-menu-item>
+                                </router-link>
                             </el-submenu>
                         </el-submenu>
     
                         <el-submenu index='4'>
                             <template slot="title">
-                                <img src="../../static/assets/weisheng1.png" alt="">卫生管理</template>
-                            <el-menu-item index="4-1">
-                                <i class="el-icon-message"></i>楼道卫生管理</el-menu-item>
-                            <el-menu-item index="4-2">
-                                <i class="el-icon-message"></i>公园马路卫生</el-menu-item>
+                                <router-link to="/smart/healthMng/health" class="colfff w100">
+                                    <img src="../../static/assets/weisheng1.png" alt="">卫生管理
+                                </router-link>
+                            </template>
+                            <router-link to="/smart/healthMng/corridor" class="w100">
+                                <el-menu-item index="4-1">                                    
+                                    <i class="el-icon-message"></i>楼道卫生管理
+                                </el-menu-item>
+                            </router-link>
+                            <router-link to="/smart/healthMng/park" class="w100">
+                                <el-menu-item index="4-2">
+                                    <i class="el-icon-message"></i>公园马路卫生
+                                </el-menu-item>
+                            </router-link>
                         </el-submenu>
     
                         <el-submenu index="5">
                             <template slot="title">
-                                <img src="../../static/assets/shezhi1.png" alt="">系统设置</template>
-                            <el-menu-item index="5-1">
-                                <i class="el-icon-message"></i>住户统计</el-menu-item>
-                            <el-menu-item index="5-2">
-                                <i class="el-icon-message"></i>广告管理</el-menu-item>
+                                <router-link to="/smart/settings/setting" class="w100 colfff">
+                                    <img src="../../static/assets/shezhi1.png" alt="">系统设置
+                                </router-link>
+                            </template>
+
+                            <router-link to="/smart/settings/householdStatistics" class="w100">
+                                <el-menu-item index="5-1">
+                                    <i class="el-icon-message"></i>住户统计
+                                </el-menu-item>
+                            </router-link>
+                            <router-link to="/smart/settings/advert" class="w100">
+                                <el-menu-item index="5-2">
+                                    <i class="el-icon-message"></i>广告管理
+                                </el-menu-item>
+                            </router-link>
                         </el-submenu>
     
                     </el-menu>
@@ -349,5 +376,21 @@ export default {
         height: 470px;
     }
 }
+}
+.hoverf {
+    height: 310px; 
+    overflow: hidden;
+}
+#carbox {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  .car {
+     border: 1px solid #349ee2; text-align: center; margin-top: 20px; background: #fff; box-sizing: border-box; color: #349ee2; display: flex; display: -webkit-flex; flex-direction: column; justify-content: center; width: 70%; height: 80px;  box-shadow: 0 0 6px #349ee2;  
+     img {
+         width: 50px;
+         margin: 0 auto;
+     }
+  }
 }
 </style>

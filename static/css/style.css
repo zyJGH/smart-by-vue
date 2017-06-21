@@ -91,6 +91,10 @@ img {
     color: #a7a7a7;
 }
 
+.colred {
+    color: red;
+}
+
 .curs {
     cursor: pointer;
 }

@@ -1,11 +1,12 @@
 <template>
+<el-col>
   <el-col id="carbox">
     <el-col class="car">
-      <img src="../../static/assets/car.png" alt="">
-      <el-col>空车位</el-col>
-      <el-col>0035</el-col>
+      <img src="../../static/assets/miehuoqi1.png" alt="">
+      <el-col class="font12">4栋3单元</el-col>
     </el-col> 
-  </el-col>
+  </el-col>  
+</el-col>
 </template>
 <script>
 export default {
@@ -16,3 +17,4 @@ export default {
   }
 }
 </script>
+

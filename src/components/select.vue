@@ -1,20 +1,29 @@
 <template>
 <div>
-  <span for="">类型: </span>
+  <span>类型: </span>
   <el-dropdown trigger="click">      
     <span class="el-dropdown-link">
-        黄金糕<i class="el-icon-caret-bottom el-icon--right flR"></i>
+        请选择<i class="el-icon-caret-bottom el-icon--right flR"></i>
     </span>
     <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item>黄金糕</el-dropdown-item>
-        <el-dropdown-item>狮子头</el-dropdown-item>
-        <el-dropdown-item>螺蛳粉</el-dropdown-item>
-        <el-dropdown-item>双皮奶</el-dropdown-item>
-        <el-dropdown-item>蚵仔煎</el-dropdown-item>
+        <el-dropdown-item v-for="item in select" key='k'>{{item.label}}</el-dropdown-item>        
     </el-dropdown-menu>
   </el-dropdown>
 </div>
 </template>
+<script>
+export default {
+    props:{
+        'select':{
+            type:Array,
+            default:[
+                {label:'aaa'}
+            ]
+        }
+    }
+}
+</script>
+
 <style lang="scss">
 .el-dropdown {
     width: 60%;

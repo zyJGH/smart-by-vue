@@ -83,16 +83,10 @@ export default {
             left: 'center'
         },
         color: ['#4f81bd'],
-        tooltip : {
-            trigger: 'axis',
-            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-            }
-        },
         xAxis : [
             {
                 type : 'category',
-                data : ["马桶报修","灯管报修","水道报修","绿化报修","马路地面报修"],
+                data : ["马桶报修","灯管报修","水道报修","绿化报修","马路报修"],
                 axisTick: {
                     alignWithLabel: true
                 }
@@ -108,6 +102,13 @@ export default {
                 name:'报修',
                 type:'bar',
                 barWidth: '50%',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'outside',
+                        formatter: "{c}"
+                    }
+                },
                 data:[120, 52, 200, 134, 220]
             }
         ]
