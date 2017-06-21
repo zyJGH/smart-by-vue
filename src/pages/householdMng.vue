@@ -10,7 +10,7 @@
                 </el-col>
             </el-col>
             <el-col :span="6">
-                <select1/>            
+                <select1/>
             </el-col>
             <el-col :span="9">
                 <el-col :span="4" class="lih34">门牌号码: </el-col>
