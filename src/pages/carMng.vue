@@ -30,23 +30,26 @@
 <script>
 import select1 from '../components/select';
 import table1 from '../components/table';
+// import mock from 'mock.js';
 export default {
     data(){
         return {
-            // type: '类型',
-            select:[{
-                label:'1'
-            },{
-                label:'2'
-            }]
+            select:[
+                { label:'1'},
+                { label:'2'}
+            ]
         }
     },
-  components: {
-    select1,
-    table1
-  }
+    components: {
+        select1,
+        table1
+    },
+    mounted() {
+        // let mock = require('mockjs');
+        // let m = Mock.mock({
+        //     'name|2': '@str'
+        // });
+        // console.log(m);
+    }
 }
 </script>
-<style lang="scss">
-
-</style>

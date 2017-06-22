@@ -5,17 +5,11 @@
     </el-col>
 
     <el-col class="margB20">
-        <el-table :data="tableData" border class="tx-c">
-            <el-table-column prop="houseNum" label="门牌号码"></el-table-column>
-            <el-table-column prop="type" label="类型"></el-table-column>
-            <el-table-column prop="square" label="面积(平米)"></el-table-column>
-            <el-table-column prop="floor" label="楼层" width="100"></el-table-column>
-            <el-table-column prop="living" label="居住人口"></el-table-column>
-            <el-table-column prop="layout" label="户型"></el-table-column>
-            <el-table-column label="操作">
-                <template scope="scope">
-                    <el-button size="small">修改</el-button>
-                </template>
+        <el-table :data="tableData" border>
+            <el-table-column v-for="item in cols" :prop="item.prop" :label="item.label" :width="item.width" key="" v-html="item.html">
+                <!--<template scope="scope" v-if="item.render">
+                    <div v-html="item.html"></div>
+                </template>-->
             </el-table-column>
         </el-table>
     </el-col>
@@ -25,47 +19,23 @@
 <script>
 export default {
   data() {
-      return {
-            tableData: [{
-            houseNum: '16-05-02',
-            type: '自住',
-            square: '58',
-            floor: '2',
-            living: '2',
-            layout: '2室2厅',
-            }, {
-            houseNum: '16-05-02',
-            type: '自住',
-            square: '58',
-            floor: '2',
-            living: '2',
-            layout: '2室2厅',
-            }, {
-            houseNum: '16-05-02',
-            type: '自住',
-            square: '58',
-            floor: '2',
-            living: '2',
-            layout: '2室2厅',
-            }, {
-            houseNum: '16-05-02',
-            type: '自住',
-            square: '58',
-            floor: '2',
-            living: '2',
-            layout: '2室2厅',  
-            }, {
-            houseNum: '16-05-02',
-            type: '自住',
-            square: '58',
-            floor: '2',
-            living: '2',
-            layout: '2室2厅',          
-        }]
-      }
-  }
+    return {
+        
+    }
+  },
+  props: {
+    tableData: {
+        type: Array,
+        default:function() {
+            return []
+        }
+    },
+    cols: {
+        type:Array,
+        default:function() {
+            return []
+        }
+    }
+  },
 }
 </script>
-<style lang="scss">
-
-</style>

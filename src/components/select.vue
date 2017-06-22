@@ -1,26 +1,36 @@
 <template>
-<div>
-  <span>类型: </span>
-  <el-dropdown trigger="click">      
-    <span class="el-dropdown-link">
-        请选择<i class="el-icon-caret-bottom el-icon--right flR"></i>
-    </span>
-    <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item v-for="item in select" key='k'>{{item.label}}</el-dropdown-item>        
-    </el-dropdown-menu>
-  </el-dropdown>
-</div>
+<el-col>
+  <el-col :span='3' class="lih34">{{selectLabel}}: </el-col>
+  <el-col :span="16">
+    <el-select v-model="selectVal" filterable placeholder="请选择">
+        <el-option v-for="item in selectData" :key="item.value" :label="item.label" :value="item.value" >
+        </el-option>
+    </el-select>
+  </el-col>
+    
+</el-col>
 </template>
 <script>
 export default {
-    props:{
-        'select':{
-            type:Array,
-            default:[
-                {label:'aaa'}
-            ]
+    data() {
+        return {
+            selectVal: ''
         }
-    }
+    },
+    props:{
+        selectLabel:String,
+        selectData:{
+            type: Array,
+            default: function () {
+                return [
+                    {
+                        label:'aaa',
+                        value: 'v3'
+                    }
+                ]
+            }
+        }
+    },
 }
 </script>
 
