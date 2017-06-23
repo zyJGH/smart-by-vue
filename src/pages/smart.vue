@@ -393,4 +393,16 @@ export default {
      }
   }
 }
+.pagination {
+    position: relative; 
+    top: 20px;
+    .pagination-wrap {
+        position: absolute;
+        top: -18px;
+        right: 0
+    }
+}
+tr td.cell {
+    white-space: nowrap;
+}
 </style>

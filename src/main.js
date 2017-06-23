@@ -5,9 +5,11 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
+import DataTables from 'vue-data-tables'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
+Vue.use(DataTables)
 
 /* eslint-disable no-new */
 new Vue({
@@ -17,5 +19,3 @@ new Vue({
   components: { App }
 })
 
-// 全局echarts
-// Vue.prototype.$echarts = echarts;
