@@ -1,9 +1,9 @@
 <template>
 <el-col>
-  <el-col :span='3' class="lih34">{{selectLabel}}: </el-col>
+  <el-col :span='3' class="lih34 width">{{selectLabel}}: </el-col>
   <el-col :span="16">
     <el-select v-model="selectVal" filterable placeholder="请选择">
-        <el-option v-for="item in selectData" :key="item.value" :label="item.label" :value="item.value" >
+        <el-option v-for="item in selectData" :change="changeVal(selectVal)" :key="item.value" :label="item.label" :value="item.value" >
         </el-option>
     </el-select>
   </el-col>
@@ -23,14 +23,16 @@ export default {
             type: Array,
             default: function () {
                 return [
-                    {
-                        label:'aaa',
-                        value: 'v3'
-                    }
+                    { label:'', value: '' }
                 ]
             }
         }
     },
+    methods: {
+        changeVal(item) {
+            this.$emit('changeVal', this.selectVal);
+        }
+    }
 }
 </script>
 

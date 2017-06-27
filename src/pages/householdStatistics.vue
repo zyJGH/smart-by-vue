@@ -6,9 +6,7 @@
             <el-col :span="14" :offset="10" class="border genderClass"></el-col>
         </el-col>    
         <el-col :span="12" style="padding-left: 20px;">
-            <el-col :span="14" class="border leaseOrHome">
-
-            </el-col>
+            <el-col :span="14" class="border leaseOrHome"></el-col>
         </el-col>    
     </el-col>   
 </el-col>  

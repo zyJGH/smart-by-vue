@@ -28,7 +28,7 @@
     </el-col>  
 
     <el-col class="hoverf">
-        <el-col v-for="item in fireData" key="k" :span="2">
+        <el-col v-for="item in fireData" :key="item" :span="2">
             <el-col v-if = "item.flag">
                 <fireExtinguisher></fireExtinguisher>
             </el-col>

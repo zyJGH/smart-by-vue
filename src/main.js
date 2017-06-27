@@ -6,12 +6,18 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import DataTables from 'vue-data-tables'
+import mock from './mockServer';
+// import axios from 'axios'
+// import VueAxios from 'vue-axios'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(DataTables)
+// Vue.use(VueAxios, axios)
 
 /* eslint-disable no-new */
+
+
 new Vue({
   el: '#app',
   router,
@@ -19,3 +25,4 @@ new Vue({
   components: { App }
 })
 
+mock()

@@ -8,14 +8,20 @@
             </router-link>
         </el-col>
         <el-col>
-            <el-col v-for="item in 2" key='item' :span="6">
-                <select1 :select='select' />            
+            <el-col :span="8">
+                <el-col :span="4" class="lih34">住户姓名: </el-col>
+                <el-col :span="10">
+                    <el-input placeholder="请输入住户姓名"></el-input>
+                </el-col>
             </el-col>
-            <el-col :span="12">
+            <el-col :span="8">
                 <el-col :span="4" class="lih34">车位编号: </el-col>
                 <el-col :span="10">
                     <el-input placeholder="请输入车位编码"></el-input>
                 </el-col>
+            </el-col>
+            <el-col v-for="item in selectD" :key='item' :span="6">
+                <select1 :selectLabel='item.label' :selectData="item.data"></select1>            
             </el-col>
         </el-col>
                 
@@ -24,32 +30,86 @@
         <el-button class="btnw" type="info">搜&nbsp;&nbsp;索</el-button>
         <el-button class="btnw" type="success">增加车位</el-button>
     </el-col>
-    <table1></table1>
+    
+    <el-col>
+        <data-tables :data='tableData' class="pagination" :row-action-def='rowActionsDef()'>
+            <el-table-column v-for="item in cols" :prop="item.prop" :label="item.label" :key="item.label"></el-table-column>
+        </data-tables>
+    </el-col>
+
   </el-col>
 </template>
 <script>
 import select1 from '../components/select';
-import table1 from '../components/table';
-// import mock from 'mock.js';
+
 export default {
     data(){
         return {
-            select:[
-                { label:'1'},
-                { label:'2'}
+            selectD:[
+                { 
+                    label:'类型',
+                    data: [
+                        {label: '固定车位', value: 'a1'},
+                        {label: '临时车位', value: 'a2'}
+                    ]
+                }
+            ],
+            tableData: [],
+            cols: [
+                {prop: 'num', label: '车位编号'},
+                {prop: 'class', label: '类型'},
+                {prop: 'numberPlates', label: '车牌号'},
+                {prop: 'flag', label: '是否已缴费'},
+                {prop: 'money', label: '缴费金额'},
+                {prop: 'start', label: '起始时间'},
+                {prop: 'end', label: '终止时间'},
             ]
         }
     },
     components: {
-        select1,
-        table1
+        select1
     },
-    mounted() {
-        // let mock = require('mockjs');
-        // let m = Mock.mock({
-        //     'name|2': '@str'
-        // });
-        // console.log(m);
+    mounted() {        
+        let Mock = require('mockjs');
+        let obj;
+        for (var i = 0; i < 44; i++) {
+            obj = Mock.mock({
+                'num|0001-1000': 1,
+                'class|1': ['固定车位', '临时车位'],
+                'numberPlates|1': '浙A' + Math.random().toString(36).substr(2).slice(0,4).toUpperCase(),
+                'flag|1': ['是', '否'],
+                'money|0-1000': 1,
+                'start|1': '@date',
+                'end|1': '@date',
+            })
+            this.tableData.push(obj);
+        }     
+    },
+    methods: {
+        rowActionsDef() {
+            let self = this;
+            return [
+                {
+                    name: '修改',
+                    handler(row) {
+                        self.$message('修改 clicked');
+                        console.log(row)
+                    }
+                },
+                {
+                    name: '提醒缴费',
+                    handler(row) {
+                        self.$message('提醒缴费 clicked');
+                        console.log(row)
+                    }
+                }
+            ]
+        }
     }
 }
 </script>
+<style lang="scss">
+.pagination {
+    top: 0
+}
+</style>

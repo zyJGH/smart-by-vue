@@ -49,7 +49,7 @@ export default new Router({
           component: layout, 
           redirect: '/smart/first/index',
           children: [
-            { path: 'index', name: '物业管理', component: first },
+            { path: 'index', name: '物业信息', component: first },
             { path: 'houseMng', name: "房产管理", component: houseMng },
             {
               path: 'leaseMng', 
@@ -90,7 +90,7 @@ export default new Router({
           component: layout,
           redirect: '/smart/serviceMng/service',
           children: [
-            { path: 'service', name: "维修管理", component: serviceMng },
+            { path: 'service', name: "维修信息", component: serviceMng },
             { path: 'closestool', name: "马桶维修", component: closestool },
             { path: 'lamp', name: "灯管维修", component: lamp },
             { path: 'waterway', name: "灯管维修", component: waterway },
@@ -104,7 +104,7 @@ export default new Router({
           component: layout,
           redirect: '/smart/securityMng/security',
           children: [
-            {path: 'security', name: "安防管理", component: securityMng},
+            {path: 'security', name: "安防信息", component: securityMng},
             {path: 'entranceGuard', name: "进出门禁", component: entranceGuard},
             {path: 'lift', name: "电梯管理", component: lift},
             {
@@ -113,7 +113,7 @@ export default new Router({
               component: layout,
               redirect: '/smart/securityMng/security/huo/fire',
               children: [
-                { path: 'huo', name: '灭火装置', component: fire },
+                { path: 'huo', name: '灭火装置信息', component: fire },
                 { path: 'fireState', name: '灭火装置状态', component: fireState }                
               ]
             }
@@ -126,7 +126,7 @@ export default new Router({
           component: layout,
           redirect: '/smart/healthMng/health',
           children: [
-            { path: 'health', name:'卫生管理', component: healthMng },
+            { path: 'health', name:'卫生信息', component: healthMng },
             { path: 'corridor', name:'卫生管理', component: corridor },
             { path: 'park', name:'卫生管理', component: park },
           ]

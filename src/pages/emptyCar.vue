@@ -9,15 +9,22 @@
             <el-col class="clear"></el-col>
         </el-col>
         <el-col>
-            <el-col v-for="item in 2" key='item' :span="6">
-                <select1/>            
-            </el-col>
-            <el-col :span="12">
-                <el-col :span="4" class="lih34">车位编号: </el-col>
-                <el-col :span="10">
-                    <el-input placeholder="请输入车位编码"></el-input>
+            <el-col :span="6">
+                <el-col :span="6" class="lih34">住户姓名: </el-col>
+                <el-col :span="14">
+                    <el-input placeholder="请输入住户姓名"></el-input>
                 </el-col>
             </el-col>
+            <el-col :span="6">
+                <el-col :span="6" class="lih34">车位编号: </el-col>
+                <el-col :span="14">
+                    <el-input placeholder="请输入车位编号"></el-input>
+                </el-col>
+            </el-col>
+            <el-col v-for="item in selectD" :key='item' :span="6">
+                <select1 :selectLabel="item.label" :selectData="item.data"></select1>            
+            </el-col>
+            
         </el-col>
     </el-col>
     <el-col>
@@ -30,7 +37,7 @@
     </el-col>
 
     <el-col class="hoverf">
-        <el-col v-for="item in 50" key="item" :span="2">
+        <el-col v-for="item in 50" :key="item" :span="2">
             <car></car>
         </el-col>
     </el-col>
@@ -42,6 +49,19 @@ import select1 from '../components/select';
 import car from '../components/car';
 
 export default {
+    data() {
+        return {
+            selectD: [
+                {
+                    label: '类型',
+                    data: [
+                        {label: '固定车位', value: '固定车位' },
+                        {label: '临时车位', value: '临时车位' },
+                    ]
+                }
+            ],
+        }
+    },
   components: {
     select1,
     car

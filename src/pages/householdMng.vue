@@ -3,16 +3,16 @@
     <el-col :span="22" class="margB20">
         <el-col class="margB20"></el-col>
         <el-col>
-            <el-col :span="8">
+            <el-col :span="7">
                 <el-col :span="6" class="lih34">住户姓名: </el-col>
                 <el-col :span="16">
                     <el-input placeholder="请输入住户姓名"></el-input>
                 </el-col>
             </el-col>
-            <el-col :span="8">
+            <el-col :span="8" :offset="1" class="tx-c">
                 <select1 :selectData="selectData" :selectLabel="selectLabel"></select1>
             </el-col>
-            <el-col :span="8">
+            <el-col :span="7" :offset="1">
                 <el-col :span="6" class="lih34">门牌号码: </el-col>
                 <el-col :span="16">
                     <el-input placeholder="请输入门牌号码"></el-input>
@@ -25,8 +25,8 @@
         <el-button class="btnw" type="success">增加住户</el-button>
     </el-col>
     <el-col>
-        <data-tables :data='tableData' class="pagination">
-            <el-table-column v-for="item in cols" :prop="item.prop" :label="item.label" sortable='custom' :key="item.label" :width="item.width"></el-table-column>
+        <data-tables :data='tableData' class="pagination" :row-action-def="rowActionsDef()">
+            <el-table-column v-for="item in cols" :prop="item.prop" :label="item.label" :key="item.label" :width="item.width"></el-table-column>            
         </data-tables>
     </el-col>
     
@@ -42,13 +42,14 @@ export default {
     return {
         selectLabel: '楼层',
         selectData: [
-            {label: '一层', value: 'v0'},
-            {label: '二层', value: 'v1'},
-            {label: '三层', value: 'v2'},
-            {label: '四层', value: 'v3'},
-            {label: '五层', value: 'v4'},
-            {label: '六层', value: 'v5'},
-            {label: '七层', value: 'v6'},
+            {label: '1楼', value: '1楼'},
+            {label: '2楼', value: '2楼'},
+            {label: '3楼', value: '3楼'},
+            {label: '4楼', value: '4楼'},
+            {label: '5楼', value: '5楼'},
+            {label: '6楼', value: '6楼'},
+            {label: '7楼', value: '7楼'},
+            {label: '8楼', value: '8楼'}
         ],
         tableData: [],
         cols: [
@@ -77,7 +78,7 @@ export default {
                 prop: 'size',
                 label: '面积(平米)',
             }
-        ]
+        ],
     }
   },
   mounted() {
@@ -101,7 +102,16 @@ export default {
     DataTables
   },
   methods: {
-    
+    rowActionsDef() {
+      let self=this;
+      return [{
+        handler(row) {
+          self.$message('Edit clicked')
+          console.log('Edit in row clicked', row)
+        },
+        name: '编辑'
+      }]
+    },
   }
 }
 </script>

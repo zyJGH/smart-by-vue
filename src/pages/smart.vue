@@ -37,7 +37,7 @@
                 <span class="date">2015.07.10</span>星期五
             </el-col>
             <el-col :span="6">
-                <img src="../../static/assets/2.png" alt="">您现在的位置：{{pathName[0]}}{{pathName[1]?'>'+pathName[1]:''}}
+                <img src="../../static/assets/2.png" alt="">您现在的位置：{{pathName[1]?pathName[1]:''}}{{pathName[2]?'>'+pathName[2]:''}}
             </el-col>
         </el-row>
     
@@ -245,18 +245,22 @@
     </div>
 </template>
 <script>
+import getSdsd from '../api/index.js';
 export default {
     data() {
         return {
             pathName:[]
         }
     },
+    created(){
+        getSdsd('sdsdsdsdsd').then((res)=>{this.hs=res.data})
+    },
     methods:{
         aa(){
             this.pathName=[
                 this.$route.matched[0].name,
                 this.$route.matched[1].name,
-                // this.$route.matched[2].name
+                this.$route.matched[2].name
             ]
             // this.pathName =this.$route.matched;
 
@@ -404,5 +408,8 @@ export default {
 }
 tr td.cell {
     white-space: nowrap;
+}
+.tool-bar.el-row {
+    visibility: hidden
 }
 </style>
