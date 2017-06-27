@@ -5,16 +5,17 @@
             <select1 :selectLabel="item.label" :selectData="item.data" @changeVal="ftmethod"></select1>
         </el-col>
         <el-col :span="7">
-                <el-col :span="5" class="lih34">门牌号码: </el-col>
-                <el-col :span="16">
-                    <el-input placeholder="请输入门牌号码"></el-input>
-                </el-col>
+            <el-col :span="5" class="lih34">门牌号码: </el-col>
+            <el-col :span="14">
+                <el-input v-model="doorNum" placeholder="请输入门牌号码"></el-input>
             </el-col>
-        <!--<el-col :span="3" class="tx-r"><el-button type="primary">精准查找</el-button></el-col>-->
+        </el-col>
     </el-col>
-    <el-col>
-        <el-button class="btnw" type="info">搜&nbsp;&nbsp;索</el-button>
-        <el-button class="btnw" type="success">增加房产</el-button>
+
+    <el-col class="margB20">   
+        <el-button class="btnw floatL" type="info">搜&nbsp;&nbsp;索</el-button>     
+        <el-button class="btnw floatR" type="success" @click="openMsgBox()">增加房产</el-button>
+        <el-col class="clear"></el-col>
     </el-col>
         
     <el-col>
@@ -22,15 +23,18 @@
             <el-table-column v-for="item in cols" :prop="item.prop" :label="item.label" :key="item.label"></el-table-column>
         </data-tables>
     </el-col>
-
+    <msgBox :show="flagMsg"></msgBox>
 </el-row>
 </template>
 <script>
 import select1 from '../components/select.vue';
+import msgBox from '../components/msgBox';
 
 export default {
   data() {
       return {
+        flagMsg: false,
+        doorNum: '',
         houseNum: '',
         tableData: [],
         selectD:[
@@ -67,39 +71,37 @@ export default {
   },
   components: {
     select1,
-    // table1
+    msgBox
   },
   mounted() {
-    let Mock = require('mockjs');
-    let obj;
-    for (var i = 0; i < 34; i++) {
-        obj = Mock.mock({
-            'num|1-30': 1,
-            'class|1': ['自住', '租赁'],
-            'size|60-120': 1,
-            'floor|1-30': 1,
-            'person|1-6': 1,
-            'layout|1': ['三室一厅', '三室两厅', '两室两厅']
-        })
-        this.tableData.push(obj);       
-    }
+    this.axios.get('/houseMng').then((res)=>{
+        // console.log(res.data);
+        this.tableData = res.data.houseMng
+        
+    }).catch((error)=>{
+        console.log(error);
+    })
   },
   methods: {    
     ftmethod(item) {
-        console.log(item);
-        
+        console.log(item);      
     },
     getRowActionsDef(){
       let self=this;
       return [{
+        name: '编辑',
         handler(row) {
           self.$message('Edit clicked')
           console.log('Edit in row clicked', row)
         },
-        name: '编辑'
+        
       }]
+    },
+    openMsgBox() {
+        this.flagMsg = !this.flagMsg;
     }
   }
 }
 </script>
+
 

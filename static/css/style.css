@@ -11,6 +11,9 @@ a {text-decoration: none;display: inline-block;}
     text-align: center;
 }
 
+.tx-j {
+    text-align-last: justify
+}
 .clear {
     clear: both;
 }

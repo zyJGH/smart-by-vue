@@ -1,15 +1,15 @@
 <template>
 <el-col>
-    <el-col class="margB20">
+    <!--<el-col class="margB20">
         <el-button class="btnw" disabled="disabled">收费统计</el-button>
         <router-link to="/smart/first/chargeMng/charge" class="floatR">
             <el-button type="warning" class="btnw">入费账单</el-button>           
         </router-link>
-    </el-col>
+    </el-col>-->
 
-    <el-col>
-        <el-col :span="11" class="border totalCharge"></el-col>
-        <el-col :span="12" :offset="1" class="border receCharge"></el-col>
+    <el-col class="margT20">
+        <el-col :span="11" class="border totalCharge margT20"></el-col>
+        <el-col :span="12" :offset="1" class="border receCharge margT20"></el-col>
     </el-col>    
 </el-col>  
 </template>

@@ -7,17 +7,17 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import DataTables from 'vue-data-tables'
 import mock from './mockServer';
-// import axios from 'axios'
-// import VueAxios from 'vue-axios'
+import axios from 'axios';
+import vueAxios from 'vue-axios';
+import VueCookie from 'vue-cookie';
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(DataTables)
-// Vue.use(VueAxios, axios)
+Vue.use(vueAxios,axios)
+Vue.use(VueCookie);
 
 /* eslint-disable no-new */
-
-
 new Vue({
   el: '#app',
   router,

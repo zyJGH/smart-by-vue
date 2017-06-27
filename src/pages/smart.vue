@@ -32,12 +32,12 @@
         </el-row>
     
         <el-row class="today colfff">
-            <el-col :span="6">
+            <el-col :span="5">
                 <img src="../../static/assets/1.png" alt=""> 今天是：
                 <span class="date">2015.07.10</span>星期五
             </el-col>
-            <el-col :span="6">
-                <img src="../../static/assets/2.png" alt="">您现在的位置：{{pathName[1]?pathName[1]:''}}{{pathName[2]?'>'+pathName[2]:''}}
+            <el-col :span="5">
+                <img src="../../static/assets/2.png" alt=""> 您现在的位置：{{pathName[1]?pathName[1]:''}}{{pathName[2]?'>'+pathName[2]:''}}
             </el-col>
         </el-row>
     
@@ -130,7 +130,7 @@
                             </template>
                             <router-link to="/smart/serviceMng/closestool" class="w100">
                                 <el-menu-item index="2-1">
-                                    <i class="el-icon-message"></i>马桶维修
+                                    <i class="el-icon-message"></i>马桶报修
                                 </el-menu-item>
                             </router-link>
                             <router-link to="/smart/serviceMng/lamp" class="w100">
@@ -226,8 +226,7 @@
                                     <i class="el-icon-message"></i>广告管理
                                 </el-menu-item>
                             </router-link>
-                        </el-submenu>
-    
+                        </el-submenu>    
                     </el-menu>
                 </el-col>
             </el-col> 
@@ -245,7 +244,6 @@
     </div>
 </template>
 <script>
-import getSdsd from '../api/index.js';
 export default {
     data() {
         return {
@@ -253,23 +251,20 @@ export default {
         }
     },
     created(){
-        getSdsd('sdsdsdsdsd').then((res)=>{this.hs=res.data})
+        // getSdsd('sdsdsdsdsd').then((res)=>{this.hs=res.data})
     },
     methods:{
-        aa(){
+        route(){
             this.pathName=[
                 this.$route.matched[0].name,
                 this.$route.matched[1].name,
                 this.$route.matched[2].name
             ]
-            // this.pathName =this.$route.matched;
-
-            // console.log(this.pathName);
-            console.log(this.$route.matched);
+            // console.log(this.$route.matched);
         }
     },    
     watch:{
-        '$route': 'aa'
+        '$route': 'route'
     }
 }
 </script>
@@ -322,7 +317,7 @@ export default {
 }
 
 .wrap {
-    padding: 30px 42px 32px 40px;    
+    padding: 20px 42px 32px 40px;    
     .wrapL {
         .welcome {
             width: 100%;
@@ -353,12 +348,12 @@ export default {
 .wrapR {
     background: #fff;
     border-radius: 5px;
-    padding-bottom: 40px;
+    padding-bottom: 70px;
     .wrapRbar {
         width: 100%;
         height: 40px;
         background: url(../../static/assets/bar.png) no-repeat;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
     }
@@ -377,7 +372,7 @@ export default {
         }
     }
     .h470 {
-        height: 470px;
+        height: 480px;
     }
 }
 }
@@ -397,19 +392,10 @@ export default {
      }
   }
 }
-.pagination {
-    position: relative; 
-    top: 20px;
-    .pagination-wrap {
-        position: absolute;
-        top: -18px;
-        right: 0
-    }
-}
 tr td.cell {
     white-space: nowrap;
 }
 .tool-bar.el-row {
-    visibility: hidden
+    display: none
 }
 </style>

@@ -91,11 +91,11 @@ export default new Router({
           redirect: '/smart/serviceMng/service',
           children: [
             { path: 'service', name: "维修信息", component: serviceMng },
-            { path: 'closestool', name: "马桶维修", component: closestool },
-            { path: 'lamp', name: "灯管维修", component: lamp },
-            { path: 'waterway', name: "灯管维修", component: waterway },
-            { path: 'green', name: "灯管维修", component: green },
-            { path: 'road', name: "灯管维修", component: road },
+            { path: 'closestool', name: "马桶报修", component: closestool },
+            { path: 'lamp', name: "灯管报修", component: lamp },
+            { path: 'waterway', name: "水道报修", component: waterway },
+            { path: 'green', name: "绿化报修", component: green },
+            { path: 'road', name: "马路地面报修", component: road },
           ]
         },
         {
@@ -126,14 +126,14 @@ export default new Router({
           component: layout,
           redirect: '/smart/healthMng/health',
           children: [
-            { path: 'health', name:'卫生信息', component: healthMng },
-            { path: 'corridor', name:'卫生管理', component: corridor },
-            { path: 'park', name:'卫生管理', component: park },
+            { path: 'health', name:'卫生管理信息', component: healthMng },
+            { path: 'corridor', name:'楼道卫生管理', component: corridor },
+            { path: 'park', name:'公园马路卫生', component: park },
           ]
         },
         {
           path: 'settings',
-          name: '系统设置',
+          name: '系统',
           component: layout,
           redirect: '/smart/settings/setting',
           children: [

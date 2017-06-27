@@ -4,7 +4,7 @@
       <el-row class="tx-c">
         <img src="../../static/assets/register-title.png">
       </el-row>
-      <el-form class="from1" :model="ruleForm" :rules="rules" ref="ruleForm">
+      <el-form class="from1" :model="ruleForm" :rules="rules" ref="user">
         <el-form-item class="posi-rel" prop="name">
           <el-input placeholder="用户名" v-model="ruleForm.name"></el-input>
           <img src="../../static/assets/user.png">
@@ -13,7 +13,7 @@
           <el-input placeholder="密 码" v-model="ruleForm.pswd"></el-input>
           <img src="../../static/assets/pswd.png">
         </el-form-item>
-        <el-button class="el-input__inner tx-c" @click='login("ruleForm")' type="warning">立即登录</el-button>
+        <el-button class="el-input__inner tx-c" @click='login' type="warning">立即登录</el-button>
       </el-form>
     </div>
   </div>
@@ -23,29 +23,34 @@ export default {
   data() {
     return {
       ruleForm: {
-          name: '',
-          pswd: ''
+        name: '',
+        pswd: ''
       },
       rules: {
         'name': [
-          {required: true, message: '请输入用户名', trigger: 'blur'},
+          { required: true, message: '请输入用户名', trigger: 'blur' },
           { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
         ],
         'pswd': [
-          {required: true, message: '请输入密码', trigger: 'blur'}
+          { required: true, message: '请输入密码', trigger: 'blur' }
         ]
       }
     }
   },
-  methods:{
-    login(user){
-      this.$refs[user].validate((valid) => {
+  methods: {
+    login() {
+      // console.log(this.$refs['user']);
+      this.$refs['user'].validate((valid) => {
         if (valid) {
-          console.log(this.$route)
-          console.log(this.$router)
-          this.$router.push('/smart/first');
+          this.axios.post('/login', this.ruleForm).then((res) => {
+            // console.log(res.data.token);
+            // this.$cookie.set('token',res.data.token)
+            this.$router.push('/smart/first');
+
+          }).catch((error) => {
+            console.log('error');
+          })
         } else {
-          console.log(valid);
           return false;
         }
       })

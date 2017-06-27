@@ -1,15 +1,15 @@
 <template>
     <el-row>
         <el-col class="margB20">
-            <el-col class="margB20">
+            <!--<el-col class="margB20">
                 <router-link to="/smart/first/chargeMng/chargesta">
                     <el-button type="warning" class="btnw">收费统计</el-button>
                 </router-link>
                 <el-button class="btnw floatR" disabled="disabled">入费账单</el-button>
                 <el-col class="clear"></el-col>
-            </el-col>
+            </el-col>-->
             
-            <el-col>
+            <el-col class="margT20">
                 <el-col :span="6">
                     <el-col :span="6" class="lih34">住户姓名:</el-col>
                     <el-col :span="14">
@@ -28,9 +28,10 @@
             </el-col>
             
         </el-col>
-        <el-col>
-            <el-button class="btnw" type="info">搜&nbsp;&nbsp;索</el-button>
-            <el-button class="btnw" type="success">增加收费记录</el-button>
+        <el-col class="margB20">
+            <el-button class="btnw floatL" type="info">搜&nbsp;&nbsp;索</el-button>
+            <el-button class="btnw floatR" type="success">增加收费记录</el-button>
+            <el-col class="clear"></el-col>
         </el-col>
 
         <el-col>
