@@ -1,5 +1,5 @@
 <template>
-<el-col>
+<el-col class="margT20">
     <el-col :span="8" :offset="8" class="border totalCharge"></el-col>
     <el-col class="tx-c margT20">
         <el-col :span="12">

@@ -16,9 +16,10 @@
             </el-col>
         </el-col>
 
-        <el-col class="margT20">
-            <el-button class="btnw" type="info">搜&nbsp;&nbsp;索</el-button>
-            <el-button class="btnw" type="success">增加马桶报修</el-button>
+        <el-col class="margT20 margB20">
+            <el-button class="btnw floatL" type="info">搜&nbsp;&nbsp;索</el-button>
+            <el-button class="btnw floatR" type="success">增加马桶报修</el-button>
+            <el-col class="clear"></el-col>
         </el-col>
 
         <el-col>

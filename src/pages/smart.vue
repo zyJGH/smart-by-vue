@@ -372,7 +372,7 @@ export default {
         }
     }
     .h470 {
-        height: 480px;
+        height: 500px;
     }
 }
 }

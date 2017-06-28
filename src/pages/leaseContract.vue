@@ -62,11 +62,12 @@ import leaseMng from './leaseMng'
     },
     methods: {
       handleClose(done) {
-        this.$confirm('确认关闭？')
-          .then(_ => {
-            done();
-          })
-          .catch(_ => {});
+          this.dialogVisible = false
+        // this.$confirm('确认关闭？')
+        //   .then(_ => {
+        //     done();
+        //   })
+        //   .catch(_ => {});
       }
     }
   };

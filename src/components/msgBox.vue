@@ -11,18 +11,10 @@
             <div class="el-message-box__content">
                 <div class="el-message-box__status"></div>
 
-                <el-col class="margB20" v-for="item in 4" :key="item">
-                    <el-col :span="10" :offset="1">
-                        <el-col :span="6" class="lih34">牌号:</el-col>
-                        <el-col :span="18">
-                            <el-input></el-input>
-                        </el-col>
-                    </el-col>
-                    <el-col :span="10" :offset="2">
-                        <el-col :span="6" class="lih34">牌号:</el-col>
-                        <el-col :span="16">
-                            <el-input></el-input>
-                        </el-col>
+                <el-col :span="12" class="margB20" v-for="item in 4" :key="item">
+                    <el-col :span="6" class="lih34">牌号:</el-col>
+                    <el-col :span="18">
+                        <el-input v-model="id"></el-input>
                     </el-col>
                 </el-col>
                
@@ -43,8 +35,11 @@
 export default {
   data() {
     return {
-        // show: true,
+        id:1
     }
+  },
+  mounted(){
+    console.log(1);
   },
   methods: {      
       close() {
@@ -53,7 +48,7 @@ export default {
         console.log(this.show);
       }
   },
-  props: ['show'],
+  props: ['show','formData','confirm'],
 }
 </script>
 
