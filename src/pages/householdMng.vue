@@ -4,7 +4,7 @@
         <el-col class="margB20"></el-col>
         <el-col>
             <el-col :span="7">
-                <el-col :span="6" class="lih34">住户姓名: </el-col>
+                <el-col :span="6" class="lih34">住户姓名</el-col>
                 <el-col :span="16">
                     <el-input placeholder="请输入住户姓名"></el-input>
                 </el-col>
@@ -13,9 +13,9 @@
                 <select1 :selectData="selectData" :selectLabel="selectLabel"></select1>
             </el-col>
             <el-col :span="7" :offset="1">
-                <el-col :span="6" class="lih34">门牌号码: </el-col>
+                <el-col :span="5" class="lih34">门牌号</el-col>
                 <el-col :span="16">
-                    <el-input placeholder="请输入门牌号码"></el-input>
+                    <el-input placeholder="请输入门牌号"></el-input>
                 </el-col>
             </el-col>
         </el-col>        
@@ -86,7 +86,7 @@ export default {
         ],
         tableData: [],
         cols: [
-            { prop: 'num', label: '门牌号码' },
+            { prop: 'num', label: '门牌号' },
             { prop: 'name', label: '住户姓名' },
             { prop: 'phone', label: '住户电话' },
             { prop: 'person', label: '居住人口' },
@@ -94,7 +94,7 @@ export default {
             { prop: 'size', label: '面积(平米)' }
         ],
         inputData: [
-            { label: '门牌号码', value: '', prop: 'num' },
+            { label: '门牌号', value: '', prop: 'num' },
             { label: '类型', value: '', prop: 'class' },
             { label: '面积(平米)', value: '', prop: 'size' },
             { label: '楼层', value: '', prop: 'floor' },

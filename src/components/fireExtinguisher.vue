@@ -8,13 +8,4 @@
   </el-col>  
 </el-col>
 </template>
-<script>
-export default {
-  data() {
-    return {
-
-    }
-  }
-}
-</script>
 

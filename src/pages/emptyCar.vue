@@ -10,13 +10,13 @@
         </el-col>-->
         <el-col>
             <el-col :span="6">
-                <el-col :span="6" class="lih34">住户姓名: </el-col>
+                <el-col :span="6" class="lih34">住户姓名</el-col>
                 <el-col :span="14">
                     <el-input placeholder="请输入住户姓名"></el-input>
                 </el-col>
             </el-col>
             <el-col :span="6">
-                <el-col :span="6" class="lih34">车位编号: </el-col>
+                <el-col :span="6" class="lih34">车位编号</el-col>
                 <el-col :span="14">
                     <el-input placeholder="请输入车位编号"></el-input>
                 </el-col>

@@ -5,9 +5,9 @@
                 <select1 :selectLabel="item.label" :selectData="item.data" @changeVal="ftmethod"></select1>
             </el-col>
             <el-col :span="7">
-                <el-col :span="5" class="lih34">门牌号码</el-col>
+                <el-col :span="5" class="lih34">门牌号</el-col>
                 <el-col :span="14">
-                    <el-input v-model="doorNum" placeholder="请输入门牌号码"></el-input>
+                    <el-input v-model="doorNum" placeholder="请输入门牌号"></el-input>
                 </el-col>
             </el-col>
         </el-col>
@@ -92,7 +92,7 @@ export default {
                 }
             ],
             cols: [
-                { prop: 'num', label: '门牌号码' },
+                { prop: 'num', label: '门牌号' },
                 { prop: 'class', label: '类型' },
                 { prop: 'size', label: '面积（平米）' },
                 { prop: 'floor', label: '楼层' },
@@ -100,7 +100,7 @@ export default {
                 { prop: 'layout', label: '户型' },
             ],
             inputData:[
-                { label: '门牌号码', value: '', prop: 'num' },
+                { label: '门牌号', value: '', prop: 'num' },
                 { label: '类型', value: '', prop: 'class' },
                 { label: '面积(平米)', value: '', prop: 'size' },
                 { label: '楼层', value: '', prop: 'floor' },
@@ -139,10 +139,6 @@ export default {
         },
         openMsgBox() {
             this.flagMsg = !this.flagMsg;
-            // var promise = new Promise(function(resolve, reject) {
-
-            // })
-            
         },
         cancel() {
             this.flagMsg = !this.flagMsg;

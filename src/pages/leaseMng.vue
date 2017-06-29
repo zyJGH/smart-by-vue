@@ -6,10 +6,10 @@
             <el-col v-for="item in selectD" :key='item.label' :span="7">
                 <select1 :selectLabel="item.label" :selectData="item.data"></select1>            
             </el-col>
-            <el-col :span="10">
-                <el-col :span="4" class="lih34">门牌号码: </el-col>
+            <el-col :span="9">
+                <el-col :span="4" class="lih34">门牌号 </el-col>
                 <el-col :span="10">
-                    <el-input placeholder="请输入门牌号码"></el-input>
+                    <el-input placeholder="请输入门牌号"></el-input>
                 </el-col>
             </el-col>
         </el-col>                
@@ -29,37 +29,37 @@
     <router-view></router-view>
 
     <el-col v-if="flagMsg">
-            <transition name="el-fade-in-linear">
-                <div tabindex="-1" class="el-message-box__wrapper">
-                    <div class="el-message-box">
-                        <div class="el-message-box__header">
-                            <div class="el-message-box__title">增加房产</div>
-                            <button type="button" aria-label="Close" class="el-message-box__headerbtn" @click="flagMsg = !flagMsg">
-                                <i class="el-message-box__close el-icon-close"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="el-message-box__content">
-                            <div class="el-message-box__status"></div>
-                            <el-col :span="12" class="margB20" v-for="item in inputData" :key="item">
-                                <el-col :span="8" class="lih34 tx-r" :prop="item.prop">{{item.label}} :&nbsp;</el-col>
-                                <el-col :span="16">
-                                    <el-input v-model="item.value"></el-input>
-                                </el-col>
-                            </el-col>                        
-                        </div>
-                        <div class="el-message-box__btns">
-                            <button type="button" class="el-button el-button--default" @click="cancel()">
-                                <span>取消</span>
-                            </button>
-                            <button type="button" class="el-button el-button--default el-button--primary" @click="promise()">
-                                <span>确定</span>
-                            </button>
-                        </div>
+        <transition name="el-fade-in-linear">
+            <div tabindex="-1" class="el-message-box__wrapper">
+                <div class="el-message-box">
+                    <div class="el-message-box__header">
+                        <div class="el-message-box__title">增加租赁记录</div>
+                        <button type="button" aria-label="Close" class="el-message-box__headerbtn" @click="flagMsg = !flagMsg">
+                            <i class="el-message-box__close el-icon-close"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="el-message-box__content">
+                        <div class="el-message-box__status"></div>
+                        <el-col :span="12" class="margB20" v-for="item in inputData" :key="item">
+                            <el-col :span="8" class="lih34 tx-r" :prop="item.prop">{{item.label}} :&nbsp;</el-col>
+                            <el-col :span="16">
+                                <el-input v-model="item.value"></el-input>
+                            </el-col>
+                        </el-col>                        
+                    </div>
+                    <div class="el-message-box__btns">
+                        <button type="button" class="el-button el-button--default" @click="cancel()">
+                            <span>取消</span>
+                        </button>
+                        <button type="button" class="el-button el-button--default el-button--primary" @click="promise()">
+                            <span>确定</span>
+                        </button>
                     </div>
                 </div>
-            </transition>
-        </el-col>
+            </div>
+        </transition>
+    </el-col>
   </el-col>
 </template>
 <script>
@@ -94,7 +94,7 @@ export default {
             }
         ],
         cols: [
-            { prop: 'num', label: '门牌号码' },
+            { prop: 'num', label: '门牌号' },
             { prop: 'fname', label: '房东姓名' },
             { prop: 'fphone', label: '房东电话' },
             { prop: 'zname', label: '租户姓名' },
@@ -104,7 +104,7 @@ export default {
             { prop: 'end', label: '租赁结束时间' },
         ],
         inputData:[
-            { label: '门牌号码', value: '', prop: 'num' },
+            { label: '门牌号', value: '', prop: 'num' },
             { label: '房东姓名', value: '', prop: 'fname' },
             { label: '房东电话', value: '', prop: 'fphone' },
             { label: '租户姓名', value: '', prop: 'zname' },

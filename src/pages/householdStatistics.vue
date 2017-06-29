@@ -27,7 +27,6 @@ export default {
       let totalOption = {
         title: {
             text: '本小区各类收费统计表',
-            // subtext: '单位: 万',
             x: 'center'
         },
         color: ['#4f81bd'],

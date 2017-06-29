@@ -1,4 +1,3 @@
-
 import Mock from 'mockjs'
 
 export default function () {
@@ -40,6 +39,32 @@ export default function () {
             'floor|1-30': 1,
             'size|80-120': 1
         }]
+    })
+
+    Mock.mock('/car', {
+        'car|30-60': [{
+            'num|0001-1000': 1,
+            'class|1': ['固定车位', '临时车位'],
+            'numberPlates|1': '浙A' + Math.random().toString(36).substr(2).slice(0,4).toUpperCase(),
+            'flag|1': ['是', '否'],
+            'money|0-1000': 1,
+            'start|1': '@date',
+            'end|1': '@date',
+        }]
+    })
+
+    Mock.mock('/closestool',{
+        'closestool|30-60': [{
+            'sort|1-100': 1,
+            'num|1-100': 1,
+            'cname|1': '@cname',
+            'style|1': ['已修', '未修'],
+            'bname|1': '@cname',
+            'bphone|1-1000000000': 1,
+            'bdate|1': '@date',
+            'cdate|1': '@date',
+        }]
+        
     })
 
     Mock.mock('/lampMng', {
@@ -93,22 +118,66 @@ export default function () {
             'cdate|1': '@date'
         }]
     })
-// {prop: 'num', label: '编号' },
-//             {prop: 'ctime', label: '创建时间' },
-//             {prop: 'class', label: '进出类型' },
-//             {prop: 'door', label: '出入人所属门牌' },
-//             {prop: 'flag', label: '是否外访' },
-//             {prop: 'floor', label: '楼层' },
-//             {prop: 'date', label: '创建时间' },
-     Mock.mock('/door', {
+
+    Mock.mock('/door', {
         'door|20-60': [{
             'num|100-400': 1,
             'class|1': ['进门', '出门' ],
-            'ctime|1': '@date',
+            'houseNum|100-1000': 1,
             'door|100-1000': 1,
             'flag|1': ['是', '否'],
             'floor|1-30': 1,
             'date|1': '@date'
+        }]
+    })
+
+    Mock.mock('/lift', {
+        'lift|20-60': [{
+            'sort|+1': 1,
+            'date|1': '@date',
+            'safeState|1': ['安全', '不安全'],
+            'unit|10-50': 1,
+            'name|1': '@cname',
+            'phone|100000000-1000000000': 1,
+            'health|1': ['良好', '一般', '优秀', '差'],
+            
+        }]
+    })
+
+    Mock.mock('/fire', {
+        'fire|20-60': [{
+            'sort|+1': 1,
+            'date|1': '@date',
+            'safeState|1': ['安全', '不安全'],
+            'unit|10-50': 1,
+            'name|1': '@cname',
+            'phone|100000000-1000000000': 1,
+            'state|1': ['良好', '一般', '优秀', '差'],
+            
+        }]
+    })
+
+    Mock.mock('/corridor', {
+        'corridor|20-60': [{
+            'sort|+1': 1,
+            'date|1': '@date',
+            'safeState|1': ['安全', '不安全'],
+            'unit|10-50': 1,
+            'name|1': '@cname',
+            'phone|100000000-1000000000': 1
+            
+        }]
+    })
+
+    Mock.mock('/park', {
+        'park|20-60': [{
+            'sort|+1': 1,
+            'date|1': '@date',
+            'safeState|1': ['安全', '不安全'],
+            'unit|10-50': 1,
+            'name|1': '@cname',
+            'phone|100000000-1000000000': 1
+            
         }]
     })
 

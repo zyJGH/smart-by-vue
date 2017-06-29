@@ -1,5 +1,5 @@
 <template>
-    <el-col>
+    <el-col class="margT20">
         <el-col>
             <el-col :span="7" :offset="2" class="zhNum">
                 <router-link to="/smart/serviceMng/closestool" class="w100">
@@ -101,7 +101,7 @@ export default {
             {
                 name:'报修',
                 type:'bar',
-                barWidth: '50%',
+                barWidth: '40%',
                 label: {
                     normal: {
                         show: true,
@@ -119,8 +119,8 @@ export default {
 </script>
 <style lang="scss">
 .statistics {
-    width: 40%;
-    height: 340px;
+    width: 45%;
+    height: 380px;
     margin-top: 15px;
 }
 </style>

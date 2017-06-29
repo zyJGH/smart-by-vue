@@ -1,7 +1,7 @@
 <template>
-    <el-col>
+    <el-col class="margT20">
         <el-col :span="7" :offset="2" class="zhNum">
-            <router-link to="/smart/serviceMng/closestool" class="w100">
+            <router-link to="/smart/healthMng/corridor" class="w100">
                 <el-col :span="7">
                     <img src="../../static/assets/loft.png" class="margL20">
                 </el-col>
@@ -13,7 +13,7 @@
         </el-col>
 
         <el-col :span="7" class="zhNum">
-            <router-link to="/smart/serviceMng/" class="w100">
+            <router-link to="/smart/healthMng/park" class="w100">
             <el-col :span="7">
                 <img src="../../static/assets/park.png" class="margL20">
             </el-col>
@@ -23,6 +23,5 @@
             </el-col>
             </router-link>
         </el-col>
-        
     </el-col>
 </template>

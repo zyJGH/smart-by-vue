@@ -1,5 +1,6 @@
 <template>
-    <el-col>
+
+    <el-col class="margT20">
         <el-col :span="7" :offset="2" class="zhNum">
             <router-link to="/smart/settings/householdStatistics" class="w100">
                 <el-col :span="7">
