@@ -139,10 +139,10 @@ export default {
                     }
                 },
                 {
-                    name: '提醒缴费',
-                    handler(row) {
-                        self.$message('已提醒');
-                    }
+                    // name: '提醒缴费',
+                    // handler(row) {
+                    //     self.$message('已提醒');
+                    // }
                 }
             ]
         },

@@ -250,9 +250,6 @@ export default {
             pathName:[]
         }
     },
-    created(){
-        // getSdsd('sdsdsdsdsd').then((res)=>{this.hs=res.data})
-    },
     methods:{
         route(){
             this.pathName=[
@@ -260,7 +257,6 @@ export default {
                 this.$route.matched[1].name,
                 this.$route.matched[2].name
             ]
-            // console.log(this.$route.matched);
         }
     },    
     watch:{
@@ -270,12 +266,7 @@ export default {
 </script>
 
 <style lang="scss" >
-.el-submenu .el-menu-item,
-.el-menu-item,
-.el-submenu__title {
-    height: 26px;
-    line-height: 26px;
-}
+
 .header {
     padding: 24px 66px 12px 36px;
     overflow: hidden;
@@ -398,4 +389,5 @@ tr td.cell {
 .tool-bar.el-row {
     display: none
 }
+
 </style>

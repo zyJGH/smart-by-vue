@@ -33,17 +33,21 @@ img {
     background: #49b0f1;
 }
 
-.propertyList>.el-menu:first-child>.el-submenu:first-child>.el-submenu__title,
-.propertyList>.el-menu>.el-submenu:nth-child(2)>.el-submenu__title,
-.propertyList>.el-menu>.el-submenu:nth-child(3)>.el-submenu__title,
-.propertyList>.el-menu>.el-submenu:nth-child(4)>.el-submenu__title,
-.propertyList>.el-menu>.el-submenu:nth-child(5)>.el-submenu__title {
+.propertyList>.el-menu>.el-submenu>.el-submenu__title {
     background: #49b0f1;
     border-radius: 5px;
     margin-top: 2px;
     color: #fff;
     height: 35px;
     line-height: 35px;
+}
+
+.propertyList>.el-menu>.el-submenu>.el-menu>.w100>.el-menu-item, 
+.propertyList>.el-menu>.el-submenu>.el-menu>.el-submenu>.el-submenu__title,
+.propertyList>.el-menu>.el-submenu>.el-menu>.el-submenu>.el-menu>.w100>.el-menu-item
+ {
+    height: 30px;
+    line-height: 30px;
 }
 
 .el-menu, .el-menu.el-menu-vertical-demo {
