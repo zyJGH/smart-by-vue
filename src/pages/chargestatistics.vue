@@ -149,7 +149,7 @@ export default {
 .border {
     border: 1px solid #aeaeae;
     padding: 10px;
-    height: 400px;
+    height: 600px;
 }
 </style>
 

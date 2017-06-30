@@ -32,15 +32,15 @@
         <el-button class="btnw floatR" type="success">增加车位</el-button>
         <el-col class="clear"></el-col>
     </el-col>
-        
-    <el-col class="tx-r">
-        <el-pagination :page-sizes="[100, 200, 300, 400]" :page-size="100" layout="total, sizes, prev, pager, next, jumper" :total="400"></el-pagination> 
-    </el-col>
-
-    <el-col class="hoverf">
+    
+    <el-col class="hoverf margB20">
         <el-col v-for="item in 50" :key="item" :span="2">
             <car></car>
         </el-col>
+    </el-col>
+        
+    <el-col class="tx-r">
+        <el-pagination :page-sizes="[100, 200, 300, 400]" :page-size="100" layout="total, sizes, prev, pager, next, jumper" :total="400"></el-pagination> 
     </el-col>
     
   </el-col>

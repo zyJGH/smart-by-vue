@@ -119,7 +119,7 @@ export default {
 </script>
 <style lang="scss">
 .statistics {
-    width: 45%;
+    width: 450px;
     height: 380px;
     margin-top: 15px;
 }

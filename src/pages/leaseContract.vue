@@ -73,7 +73,7 @@ import leaseMng from './leaseMng'
   };
 </script>
 <style lang="scss">
-.el-dialog--tiny {
+.h470 .el-dialog__wrapper .el-dialog--tiny {
     width: 70%;
     height: 500px;
     overflow: auto;

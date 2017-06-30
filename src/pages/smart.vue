@@ -368,7 +368,7 @@ export default {
 }
 }
 .hoverf {
-    height: 310px; 
+    height: 340px; 
     overflow: hidden;
 }
 #carbox {
@@ -376,7 +376,7 @@ export default {
   display: -webkit-flex;
   flex-wrap: wrap;
   .car {
-     border: 1px solid #349ee2; text-align: center; margin-top: 20px; background: #fff; box-sizing: border-box; color: #349ee2; display: flex; display: -webkit-flex; flex-direction: column; justify-content: center; width: 70%; height: 80px;  box-shadow: 0 0 6px #349ee2;  
+     border: 1px solid #349ee2; text-align: center; margin-top: 20px; background: #fff; box-sizing: border-box; color: #349ee2; display: flex; display: -webkit-flex; flex-direction: column; justify-content: center; width: 70%; height: 90px;  box-shadow: 0 0 6px #349ee2;  
      img {
          width: 50px;
          margin: 0 auto;
